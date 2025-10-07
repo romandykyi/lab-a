@@ -16,8 +16,7 @@ header {
     padding: 1rem 1rem 2rem;
     background: linear-gradient(180deg, #1a1a1a, #0e0e0e);
     border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/style1/header.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./img/style1/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -49,10 +48,9 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
     place-items: center;
     gap: 2rem;
-    padding: 0 2rem;
-    align-items: stretch;;
+    padding: 0 2rem 25px;
+    align-items: stretch;
     margin: 0 auto;
-    padding-bottom: 25px;
 }
 
 .vst {
@@ -60,14 +58,14 @@ h2 {
     border-radius: 1rem;
     padding: 1.5rem;
     max-width: 620px;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255,215,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vst:hover {
     transform: translateY(-6px);
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+    box-shadow: 0 0 20px rgba(255,215,0,0.25);
 }
 
 h3 {
@@ -78,8 +76,7 @@ h3 {
 
 .vst-description {
     color: #ddd;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .vst-tags {
@@ -90,7 +87,7 @@ h3 {
 }
 
 .vst-tags li {
-    background-color: rgba(255, 215, 0, 0.1);
+    background-color: rgba(255,215,0,0.1);
     color: #ffd700;
     padding: 0.3rem 0.7rem;
     border-radius: 9999px;
@@ -101,20 +98,18 @@ h3 {
     display: block;
     border-radius: 1rem;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16/9;
 }
 
 .steps {
     background: #111;
     padding: 1rem 2rem;
-
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/style1/steps-back.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./img/style1/steps-back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    border-top: 1px solid rgba(255, 242, 169, 0.2);
-    border-bottom: 1px solid rgba(255, 242, 169, 0.2);
+    border-top: 1px solid rgba(255,242,169,0.2);
+    border-bottom: 1px solid rgba(255,242,169,0.2);
 }
 
 .step {
@@ -135,8 +130,7 @@ h3 {
 .reviews {
     padding: 2rem 2rem 3rem;
     background: #0f0f0f;
-
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./img/style1/dude.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./img/style1/dude.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -169,8 +163,8 @@ h3 {
 
 footer {
     text-align: center;
-    padding: 1rem 1rem;
-    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 1rem;
+    border-top: 1px solid rgba(255,215,0,0.2);
     font-size: 0.9rem;
     color: #aaa;
 }
@@ -179,27 +173,22 @@ footer {
     .site-title {
         font-size: 2rem;
     }
-
     h2 {
         font-size: 1.6rem;
     }
-
     .step {
         padding: 1.2rem;
     }
-
     .vsts-collection {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         padding: 0 1rem;
     }
-
     .vst {
         width: 100%;
         max-width: none;
     }
-
     .reviews {
         background-position-x: 25%;
     }
