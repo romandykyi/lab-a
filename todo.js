@@ -98,32 +98,32 @@ class Todo {
             return container;
         }
 
-        const regex = new RegExp(highlightString, 'gi'); // case-insensitive
-        let lastIndex = 0;
-        let match;
+        const lowerText = text.toLowerCase();
+        const lowerHighlight = highlightString.toLowerCase();
 
-        while ((match = regex.exec(text)) !== null) {
-            // Append text before the match
-            if (match.index > lastIndex) {
-                container.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+        let lastIndex = 0;
+        let index;
+
+        while ((index = lowerText.indexOf(lowerHighlight, lastIndex)) !== -1) {
+            if (index > lastIndex) {
+                container.appendChild(document.createTextNode(text.slice(lastIndex, index)));
             }
 
-            // Append the highlighted match
             const highlight = document.createElement('span');
             highlight.className = 'highlight';
-            highlight.textContent = match[0];
+            highlight.textContent = text.slice(index, index + highlightString.length);
             container.appendChild(highlight);
 
-            lastIndex = match.index + match[0].length;
+            lastIndex = index + highlightString.length;
         }
 
-        // Append remaining text
         if (lastIndex < text.length) {
             container.appendChild(document.createTextNode(text.slice(lastIndex)));
         }
 
         return container;
     }
+
 
     #createTaskElement(task, index, searchString = "") {
         let taskElement = document.createElement("div");
@@ -329,7 +329,6 @@ const formSubmitted = function(event) {
 
 const documentClicked = function(event) {
     if (event.target.closest(".task")) return;
-
     currentTodo.setEditIndex(-1);
 }
 
@@ -357,7 +356,7 @@ const setUp = function() {
         }
     });
 
-    document.addEventListener("click", documentClicked);
+    document.addEventListener("pointerdown", documentClicked);
 
     const searchField = document.getElementById("searchField"); 
     searchField.addEventListener("input", updateSearch);
