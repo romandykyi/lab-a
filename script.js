@@ -186,6 +186,8 @@ document.getElementById("checkButton").addEventListener("click", (event) => {
     }
     
     error = null;
+    currentWeather = null;
+    forecast = null;
 
     fetchCurrentWeather(query);
     fetchForecast(query);
