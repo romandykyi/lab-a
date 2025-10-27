@@ -63,12 +63,16 @@ const createPuzzlePieceElement = function(container, index, onDropped = null) {
     element.id = `${container.id}-e${index}`;
     element.className = "puzzlePiece";
     element.dataset.index = -1;
+    element.draggable = true;
 
     element.addEventListener("dragstart", function(event) {
-        if (element.dataset.index < 0) return;
+        if (element.dataset.index < 0) {
+            event.preventDefault();
+            return;
+        }
 
         element.classList.add("dragged");
-        event.dataTransfer.setData("pieceId", element.id);
+        event.dataTransfer.setData("text", element.id);
     });
 
     element.addEventListener("dragend", function(event) {
@@ -95,7 +99,7 @@ const createPuzzlePieceElement = function(container, index, onDropped = null) {
 
         element.classList.remove("dropping");
 
-        const draggedId = event.dataTransfer.getData("pieceId");
+        const draggedId = event.dataTransfer.getData("text");
         if (!draggedId) return;
         const draggedElement = document.getElementById(draggedId);
         const puzzleIndex = draggedElement.dataset.index;
@@ -125,7 +129,6 @@ const clearPuzzles = function() {
         changeElementState(element, -1);
     }
 }
-
 
 const checkWinCondition = function(pieces) {
     for (let i = 0; i < pieces.length; i++) {
