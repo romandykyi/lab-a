@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lab D</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="app-header">
+                <h1>REST Pogoda</h1>
+                <p>Nie SOAP, a REST!</p>
+            </div>
+            
+            <div class="search-container">
+                <form class="search-form">
+                    <div class="input-group">
+                        <label for="locationInput">Lokalizacja</label>
+                        <input type="text" placeholder="Lisbon, Portugal" id="locationInput" class="location-input">
+                        <div id="error-display" class="hidden">An unexpected error has occured.</div>
+                    </div>
+                    <button id="checkButton" type="submit" id="checkButton">Check Weather</button>
+                </form>
+            </div>
+            
+            <div id="weather-display"></div>
+        </div>
+    </body>
+</html>
